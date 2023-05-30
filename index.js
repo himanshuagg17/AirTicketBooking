@@ -7,9 +7,17 @@ const {authenticate}=require("./middlewares/authenticate")
 const {BookingRouter}=require("./routes/booking.routes");
 
 const app=express();
+
+
 // middleware to parse the json data
 app.use(express.json());
+
+app.get("/",(req,res)=>{
+    res.send("flights booking app");
+})
 app.use("/api",UserRouter);
+
+
 
 app.use(authenticate);
 
